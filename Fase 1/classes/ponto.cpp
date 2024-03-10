@@ -1,15 +1,15 @@
 #include "../../include/ponto.h"
 
-Ponto::Ponto (float x, float y, float z) : x(x), y(y), z(z) {}
+MeuPonto::MeuPonto (float x, float y, float z) : x(x), y(y), z(z) {}
 
-float Ponto::getX() const {
+float MeuPonto::getX() const {
 	return this -> x;
 }
 
-float Ponto::getY() const {
+float MeuPonto::getY() const {
 	return this -> y;
 }
 
-float Ponto::getZ() const {
+float MeuPonto::getZ() const {
 	return this -> z;
 }

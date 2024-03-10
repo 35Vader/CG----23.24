@@ -46,11 +46,11 @@ vector<string> obter_arquivos(char* caminho)
     return arquivos;
 }
 
-std::vector<Ponto> obterPontos(char* caminho)
+std::vector<MeuPonto> obterPontos(char* caminho)
 {
     int i;
     vector<string> arquivos = obter_arquivos(caminho);
-    std::vector<Ponto> pontos;
+    std::vector<MeuPonto> pontos;
     for(i = 0; i < arquivos.size(); i++)
     {
         ifstream infile;
@@ -63,7 +63,7 @@ std::vector<Ponto> obterPontos(char* caminho)
                 std::vector<string> tokens;
                 tokens = dividir(linha, ' ');
 
-                Ponto *p = new Ponto(
+                MeuPonto *p = new MeuPonto(
                     stof(tokens[0], nullptr),
                     stof(tokens[1], nullptr),
                     stof(tokens[2], nullptr)
