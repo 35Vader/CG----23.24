@@ -11,7 +11,7 @@
 float angulo_alpha = -M_PI / 4, angulo_beta = -M_PI / 4, passo = 2.0;
 float posicao_x = 10, posicao_y = 10, posicao_z = 10;
 float direcao_x, direcao_y, direcao_z;
-pointsStruct meusPontos;
+MeusPontos meusPontos;
 int modo_desenho = GL_LINE;
 
 float calcularNorma(float x, float y, float z) {
@@ -143,20 +143,20 @@ void processarTeclasEspeciais(int tecla, int xx, int yy) {
 
 void ajuda() {
     printf(" ┌-------------------------------------------------AJUDA---------------------------------------------┐\n");
-    printf(" |                                                                                                  |\n");
-    printf(" |   ‣$ ./MeuPrograma <ARQUIVO_ENTRADA_XML>                                                        |\n");
-    printf(" |                                                                                                  |\n");
-    printf(" |                                                                                                  |\n");
-    printf(" |      Controles :                                                                               |\n");
-    printf(" |         mover para frente: w                                                                   |\n");
-    printf(" |         mover para trás: s                                                                     |\n");
-    printf(" |         olhar para a esquerda: a                                                              |\n");
-    printf(" |         olhar para a direita: d                                                               |\n");
-    printf(" |         olhar para cima: SETA PARA CIMA                                                        |\n");
-    printf(" |         olhar para baixo: SETA PARA BAIXO                                                     |\n");
-    printf(" |         alternar modo de desenho: m                                                           |\n");
-    printf(" |                                                                                                  |\n");
-    printf(" └--------------------------------------------------------------------------------------------------┘\n");
+    printf(" |                                                                                                   |\n");
+    printf(" |   ‣$ ./MeuPrograma <ARQUIVO_ENTRADA_XML>                                                          |\n");
+    printf(" |                                                                                                   |\n");
+    printf(" |                                                                                                   |\n");
+    printf(" |      Controles :                                                                                  |\n");
+    printf(" |         mover para frente: w                                                                      |\n");
+    printf(" |         mover para trás: s                                                                        |\n");
+    printf(" |         olhar para a esquerda: a                                                                  |\n");
+    printf(" |         olhar para a direita: d                                                                   |\n");
+    printf(" |         olhar para cima: SETA PARA CIMA                                                           |\n");
+    printf(" |         olhar para baixo: SETA PARA BAIXO                                                         |\n");
+    printf(" |         alternar modo de desenho: m                                                               |\n");
+    printf(" |                                                                                                   |\n");
+    printf(" └---------------------------------------------------------------------------------------------------┘\n");
 }
 
 int main(int argc, char **argv) {

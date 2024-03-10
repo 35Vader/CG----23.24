@@ -1,12 +1,13 @@
 #include "headers/parser.h"
 #include "headers/tinyxml2.h"
+#include "./headers/ponto.h"
 
 using namespace std;
 using namespace tinyxml2;
 
 
 
-vector<string> split(const string& s, char delimiter)
+vector<string> dividir(const string& s, char delimiter)
 {
     std::vector<string> tokens;
     std::string token;
@@ -18,7 +19,7 @@ vector<string> split(const string& s, char delimiter)
     return tokens;
 }
 
-vector<string> obterArquivos(char* caminho)
+vector<string> obter_arquivos(char* caminho)
 {
     std::vector<string> arquivos;
     XMLDocument doc;
@@ -48,7 +49,7 @@ vector<string> obterArquivos(char* caminho)
 std::vector<Ponto> obterPontos(char* caminho)
 {
     int i;
-    vector<string> arquivos = obterArquivos(caminho);
+    vector<string> arquivos = obter_arquivos(caminho);
     std::vector<Ponto> pontos;
     for(i = 0; i < arquivos.size(); i++)
     {
@@ -60,12 +61,13 @@ std::vector<Ponto> obterPontos(char* caminho)
             while(std::getline(infile, linha))
             {
                 std::vector<string> tokens;
-                tokens = split(linha, ' ');
+                tokens = dividir(linha, ' ');
 
-                Ponto *p = new Ponto();
-                (*p).x = stof(tokens[0], nullptr);
-                (*p).y = stof(tokens[1], nullptr);
-                (*p).z = stof(tokens[2], nullptr);
+                Ponto *p = new Ponto(
+                    stof(tokens[0], nullptr),
+                    stof(tokens[1], nullptr),
+                    stof(tokens[2], nullptr)
+                );
                 pontos.push_back(*p);
             }
             infile.close();
